@@ -17,15 +17,11 @@ import static org.testng.Assert.assertTrue;
 
 public class OnlineCasinosTest extends BaseTest {
 
-    @BeforeMethod
-    public void setUp () {
+    @Test(invocationCount = 2, successPercentage = 99)
+    public void headerButtonsTest () {
         startDriver("onlineCasinos");
         basePage.goToUrl(ONLINE_CASINOS_PAGE_URL);
         basePage.waitOneSeconds();
-    }
-
-    @Test(invocationCount = 2, successPercentage = 99)
-    public void headerButtonsTest () {
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_HEADER_BUTTONS; i++) {
             basePage.waitOneSeconds();
@@ -42,6 +38,9 @@ public class OnlineCasinosTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void footerButtonsTest () {
+        startDriver("onlineCasinos");
+        basePage.goToUrl(ONLINE_CASINOS_PAGE_URL);
+        basePage.waitOneSeconds();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_FOOTER_BUTTONS; i++) {
             basePage.waitOneSeconds();
@@ -56,6 +55,9 @@ public class OnlineCasinosTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void mainLogoLinkTest () {
+        startDriver("onlineCasinos");
+        basePage.goToUrl(ONLINE_CASINOS_PAGE_URL);
+        basePage.waitOneSeconds();
         basePage.mainLogoButtonClick();
         basePage.waitOneSeconds();
         assertEquals(MAIN_PAGE_URL, basePage.getCurrentUrl());
@@ -63,6 +65,9 @@ public class OnlineCasinosTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void playNowRegButtonTest () {
+        startDriver("onlineCasinos");
+        basePage.goToUrl(ONLINE_CASINOS_PAGE_URL);
+        basePage.waitOneSeconds();
         basePage.waitThirtySeconds();
         basePage.closePopup();
         int goodTitlesCount = 0;
@@ -80,6 +85,9 @@ public class OnlineCasinosTest extends BaseTest {
 
     @Test
     public void successfulCommentFormTest () {
+        startDriver("onlineCasinos");
+        basePage.goToUrl(ONLINE_CASINOS_PAGE_URL);
+        basePage.waitOneSeconds();
         onlineCasinosPage.enterName(NAME)
                 .enterEmail(EMAIL)
                 .enterComment(COMMENT)

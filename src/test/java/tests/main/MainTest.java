@@ -17,15 +17,11 @@ import static org.testng.Assert.assertTrue;
 
 public class MainTest extends BaseTest {
 
-    @BeforeMethod
-    public void setUp () {
+    @Test(invocationCount = 2, successPercentage = 99)
+    public void headerButtonsTest () {
         startDriver("main");
         basePage.goToUrl(MAIN_PAGE_URL);
         basePage.waitOneSeconds();
-    }
-
-    @Test(invocationCount = 2, successPercentage = 99)
-    public void headerButtonsTest () {
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_HEADER_BUTTONS; i++) {
             basePage.waitOneSeconds();
@@ -42,6 +38,9 @@ public class MainTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void footerButtonsTest () {
+        startDriver("main");
+        basePage.goToUrl(MAIN_PAGE_URL);
+        basePage.waitOneSeconds();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_FOOTER_BUTTONS; i++) {
             basePage.waitOneSeconds();
@@ -56,6 +55,9 @@ public class MainTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void mainLogoLinkTest () {
+        startDriver("main");
+        basePage.goToUrl(MAIN_PAGE_URL);
+        basePage.waitOneSeconds();
         basePage.mainLogoButtonClick();
         basePage.waitOneSeconds();
         assertEquals(MAIN_PAGE_URL, basePage.getCurrentUrl());
@@ -63,6 +65,9 @@ public class MainTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void realPlayRegButtonTest () {
+        startDriver("main");
+        basePage.goToUrl(MAIN_PAGE_URL);
+        basePage.waitOneSeconds();
         basePage.waitOneSeconds();
         mainPage.realPlayRegButtonClick();
         basePage.nextTab();
@@ -74,6 +79,9 @@ public class MainTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void playForMoneyRegButtonTest () {
+        startDriver("main");
+        basePage.goToUrl(MAIN_PAGE_URL);
+        basePage.waitOneSeconds();
         int goodTitlesCount = 0;
         for (int i = 2; i <= 4; i++) {
             basePage.waitOneSeconds();
@@ -89,6 +97,9 @@ public class MainTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void top5CasinoReviewRegButtonTest () {
+        startDriver("main");
+        basePage.goToUrl(MAIN_PAGE_URL);
+        basePage.waitOneSeconds();
         basePage.waitThirtySeconds();
         basePage.closePopup();
         int goodTitlesCount = 0;
@@ -106,6 +117,9 @@ public class MainTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void lastArticlesReadMoreButtonTest () {
+        startDriver("main");
+        basePage.goToUrl(MAIN_PAGE_URL);
+        basePage.waitOneSeconds();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_LAST_ARTICLES_READ_MORE_BUTTON_MAIN_PAGE; i++) {
             basePage.waitOneSeconds();
@@ -120,6 +134,9 @@ public class MainTest extends BaseTest {
 
     @Test(invocationCount = 2, successPercentage = 99)
     public void readMoreCommentsButtonTest () {
+        startDriver("main");
+        basePage.goToUrl(MAIN_PAGE_URL);
+        basePage.waitOneSeconds();
         basePage.waitTwoSeconds();
         mainPage.readMoreCommentsButtonClick();
         basePage.waitTwoSeconds();
@@ -128,6 +145,9 @@ public class MainTest extends BaseTest {
 
     @Test
     public void successfulCommentFormTest () {
+        startDriver("main");
+        basePage.goToUrl(MAIN_PAGE_URL);
+        basePage.waitOneSeconds();
         mainPage.enterName(NAME)
                 .enterEmail(EMAIL)
                 .enterComment(COMMENT)
