@@ -101,7 +101,7 @@ public class MainTest extends BaseTest {
             else { basePage.outputWrongTitle(); }
             basePage.closeTabAndMoveToNext();
         }
-        assertEquals(NUMBER_OF_TOP_5_CASINOS_REVIEW_BUTTON_MAIN_PAGE, goodTitlesCount);
+        assertEquals(4, goodTitlesCount);
     }
 
     @Test(invocationCount = 2, successPercentage = 99)

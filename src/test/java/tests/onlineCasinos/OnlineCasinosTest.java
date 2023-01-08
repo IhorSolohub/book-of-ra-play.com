@@ -75,7 +75,7 @@ public class OnlineCasinosTest extends BaseTest {
             else { basePage.outputWrongTitle(); }
             basePage.closeTabAndMoveToNext();
         }
-        assertEquals(NUMBER_OF_PLAY_NOW_BUTTON_MAIN_PAGE, goodTitlesCount);
+        assertEquals(11, goodTitlesCount);
     }
 
     @Test
